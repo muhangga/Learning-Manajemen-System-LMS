@@ -24,10 +24,10 @@
    </nav>
    <div class="main-sidebar">
         <aside id="sidebar-wrapper">
-          <div class="sidebar-brand">
-            <a href="index.html"><i class="fas fa-university mr-2"></i>Elearning</a>
+          <div class="sidebar-brand pt-2">
+            <a href="index.html"><i class="fas fa-university mr-2 border-bottom"></i>Simak Elearning</a>
           </div>
-
+          <hr>
           <div class="sidebar-brand sidebar-brand-sm">
             <a href="index.html">LMS</a>
             <hr class="mt-1 mb-1">
@@ -36,15 +36,15 @@
           <ul class="sidebar-menu">
               <li class="menu-header">Dashboard</li>
                 <li class="nav-item">
-                  <a href="#" class="nav-link"><i class="fas fa-home"></i><span>Dashboard</span></a>
+                  <a href="<?= base_url('dashboard_administrator') ?>" class="nav-link"><i class="fas fa-home"></i><span>Dashboard</span></a>
                 </li>
               <li class="menu-header">Data master</li>
               <li class="nav-item dropdown">
-                <a href="#" class="nav-link has-dropdown"><i class="fas fa-edit"></i><span>Data Master</span></a>
-                <ul class="dropdown-menu">
-                  <li><a class="nav-link" href="components-article.html">Data Administrator</a></li>
-                  <li><a class="nav-link" href="components-article.html">Data Mahasiswa</a></li>
-                  <li><a class="nav-link" href="components-avatar.html">Data Matakuliah</a></li>
+                <a href="#" class="nav-link has-dropdown"><i class="fas fa-fw fa-edit"></i><span>Data Master</span></a>
+                <ul class="dropdown-menu" style="padding-left: 0 !important" >
+                  <li><a class="nav-link p-4" href="<?= base_url('administrator') ?>"><i class="fas fa-user"></i>Data Administrator</a></li>
+                  <li><a class="nav-link p-4" href="components-article.html"><i class="fas fa-users"></i>Data Mahasiswa</a></li>
+                  <li><a class="nav-link p-4" href="components-avatar.html"><i class="fas fa-edit"></i>Data Matakuliah</a></li>
                 </ul>
               </li>
           </ul>
@@ -52,13 +52,23 @@
       </div>
 
       <!-- Main Content -->
-      <!-- <div class="main-content">
+    <!-- <div class="main-content">
         <section class="section">
           <div class="section-header">
             <h1>Blank Page</h1>
           </div>
 
-          <div class="section-body">
+         <div class="section-body"></div> 
+       </section>
+      </div>  -->
+      <!-- <div class="main-content">
+        <section class="section">
+          <div class="section-header">
+            <h1>Table</h1>
+            <div class="section-header-breadcrumb">
+              <div class="breadcrumb-item active"><a href="#">Dashboard</a></div>
+              <div class="breadcrumb-item"><a href="#">Components</a></div>
+              <div class="breadcrumb-item">Table</div>
+            </div>
           </div>
-        </section>
-      </div> --> 
+      </div> -->

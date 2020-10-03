@@ -56,6 +56,7 @@ $route['login_user'] = 'LoginController/login_user';
 
 // Admin
 $route['dashboard_administrator'] = 'Main/index'; 
+$route['administrator'] = 'Main/data_administrator'; 
 
 $route['default_controller'] = 'LoginController';
 $route['404_override'] = '';

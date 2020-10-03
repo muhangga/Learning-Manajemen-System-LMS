@@ -12,4 +12,17 @@ class Main extends CI_Controller {
       $this->load->view('component/footer');
    }
 
+   public function data_administrator() {
+      $data = [ 
+         "dashboard" => "Dashboard",
+         "title" => "Data Administrator",
+         "data_master" => "Data Master"
+      ];
+      
+      $this->load->view('component/header', $data);
+      $this->load->view('component/sidebar');
+      $this->load->view('admin/data-master/data-administrator');
+      $this->load->view('component/footer');
+   }
+
 }
