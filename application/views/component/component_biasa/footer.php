@@ -1,11 +1,3 @@
-<footer class="footer">
-        <div class="text-center">
-          Copyright &copy; <?= date('Y'); ?> <div class="bullet"></div> Design By Kelompok 11</a>
-        </div>
-      </footer>
-    </div>
-  </div>
-
 
 <!-- General JS Scripts -->
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -18,7 +10,3 @@
   <!-- Template JS File -->
   <script src="<?= base_url('vendor/assets/js/scripts.js'); ?>"></script>
   <script src="<?= base_url('vendor/assets/js/custom.js'); ?>"></script>
-
-  <!-- Page Specific JS File -->
-</body>
-</html>
