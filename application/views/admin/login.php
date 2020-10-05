@@ -6,16 +6,16 @@
     <div class="row">
       <div class="col-12 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-6 offset-lg-3 col-xl-4 offset-xl-4">
         <div class="login-brand">
-          <img src="<?= base_url('vendor/image/FMIPA.JPG') ?>" alt="logo" width="100">
+          <img src="<?= base_url('vendor/image/FMIPA.JPG') ?>" alt="logo" width="100"">
         </div>
         <?= $this->session->flashdata('message'); ?>
 
         <div class="card card-primary shadow">
-          <div class="card-header"><h4>Login</h4></div>
+          <div class="card-header"><h4>Login Administrator</h4></div>
 
 
           <div class="card-body">
-            <form method="POST" action="<?= base_url('Auth') ?>">
+            <form method="POST" action="<?= base_url('Auth/login_admin') ?>">
 
               <div class="form-group">
                     <label for="email">Email</label>
@@ -66,7 +66,7 @@
                     Login
                   </button>
                   <div class="form-group">
-                    <a href="<?= base_url('register') ?>" class="mt-3 float-right text-muted pb-3">Belum punya akun? Buat akun!</a>
+                    <a href="<?= base_url('register_admin') ?>" class="mt-3 float-right text-muted pb-3">Belum punya akun? Buat akun!</a>
                     </div>
                   </div>
                 </div>

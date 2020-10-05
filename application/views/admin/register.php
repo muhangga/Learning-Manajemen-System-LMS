@@ -10,29 +10,22 @@
          </div>
 
          <div class="card card-primary shadow">
-            <div class="card-header"><h4>Register</h4></div>
+            <div class="card-header"><h4>Register Administrator</h4></div>
 
             <?= $this->session->flashdata('gagal'); ?>
 
             <div class="card-body">
-               <form method="POST" action="<?= base_url('Auth/register') ?>">
+               <form method="POST" action="<?= base_url('Auth/register_admin') ?>">
                <div class="form-group">
                   <label for="email">Email</label>
                   <input id="email" type="email" class="form-control" name="email" value="<?= set_value('email'); ?>">
                   <?= form_error('email', '<small class="text-danger pl-3">', '</small>'); ?>
                </div>
 
-               <div class="row">
-                  <div class="form-group col-6">
-                     <label for="email" class="d-block">Nama</label>
-                     <input id="text" type="nama" class="form-control" name="nama" value="<?= set_value('nama'); ?>">
-                     <?= form_error('nama', '<small class="text-danger pl-3">', '</small>'); ?>
-                  </div>
-                  <div class="form-group col-6">
-                     <label for="npm" class="d-block">NPM</label>
-                     <input id="text" type="npm" class="form-control" name="npm" value="<?= set_value('npm'); ?>">
-                     <?= form_error('npm', '<small class="text-danger pl-3">', '</small>'); ?>
-                  </div>
+               <div class="form-group">
+                  <label for="email" class="d-block">Nama</label>
+                  <input id="text" type="nama" class="form-control" name="nama" value="<?= set_value('nama'); ?>">
+                  <?= form_error('nama', '<small class="text-danger pl-3">', '</small>'); ?>
                </div>
 
                <div class="row">
@@ -52,7 +45,7 @@
                      Register
                   </button>
                </div>
-               <a href="<?= base_url('login_user') ?>" class="text-muted float-right mt-2 pb-3">Sudah punya akun? Kembali ke Login</a>
+               <a href="<?= base_url('login_admin') ?>" class="text-muted float-right mt-2 pb-3">Sudah punya akun? Kembali ke Login</a>
                </form>
             </div>
          </div>
