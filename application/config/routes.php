@@ -62,9 +62,12 @@ $route['register_admin'] = 'Auth/register_admin';
 // Data master
 $route['dashboard_administrator'] = 'Main/index'; 
 $route['administrator'] = 'Main/data_administrator'; 
+$route['hapus_admin/(:num)'] = 'Main/hapus_admin/$1'; 
 $route['data_mahasiswa'] = 'Main/data_mahasiswa'; 
+$route['hapus_mahasiswa/(:num)'] = 'Main/hapus_mahasiswa/$1';
 $route['data_matkul'] = 'Main/data_matkul'; 
 $route['save_matkul'] = 'Main/save_matkul'; 
+$route['hapus_matkul/(:num)'] = 'Main/hapus_matkul/$1'; 
 
 $route['default_controller'] = 'Auth';
 $route['404_override'] = '';

@@ -40,7 +40,7 @@
                      <td><div class="badge badge-success"><?php if($matkul['status'] == 1) { echo "Aktif ";} ?></div></td>
                      <td>
                         <a href="#" class="btn btn-success btn-xs"><i class="fa fa-edit"></i></a>
-                        <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></a>
+                        <a href="<?= base_url('hapus_matkul/') . $matkul['id_matkul']; ?>" class="btn btn-danger btn-xs"><i class="fa fa-trash" id="hapus" data-toggle="modal" data-target="#modal_hapus_matkul" title="hapus"></i></a>
                      </td>
                   </tr>
                   <?php endforeach; ?>

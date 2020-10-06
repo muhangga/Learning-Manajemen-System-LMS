@@ -37,6 +37,13 @@ class Main extends CI_Controller {
       $this->load->view('admin/component/footer');
    }
 
+   public function hapus_admin($id_admin) {
+      $this->Main_model->hapus_admin($id_admin);
+
+      $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Data Admin berhasil dihapus!</div>');
+		redirect('administrator');
+   }
+
    public function data_mahasiswa() {
       $data = [ 
          "dashboard" => "Dashboard",
@@ -50,6 +57,13 @@ class Main extends CI_Controller {
       $this->load->view('admin/component/sidebar', $data);
       $this->load->view('admin/data-master/data-mahasiswa', $data);
       $this->load->view('admin/component/footer');
+   }
+
+    public function hapus_mahasiswa($id_user) {
+      $this->Main_model->hapus_mahasiswa($id_user);
+
+      $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">User berhasil dihapus</div>');
+		redirect('data_mahasiswa');
    }
 
     public function data_matkul() {
@@ -91,5 +105,12 @@ class Main extends CI_Controller {
          $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Data gagal ditambahkan, pastikan Matakuliah belum terdaftar!</div>');
          redirect('data_matkul');     
       }
+   }
+
+   public function hapus_matkul($id_matkul) {
+      $this->Main_model->hapus_matkul($id_matkul);
+
+      $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Matakuliah berhasil dihapus</div>');
+		redirect('data_matkul');
    }
 }

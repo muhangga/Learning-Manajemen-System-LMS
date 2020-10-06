@@ -8,6 +8,9 @@
          <div class="breadcrumb-item"><?= $title; ?></div>
       </div>
       </div>
+
+      <?= $this->session->flashdata('message'); ?>
+
       <div class="row ">
          <div class="col-12 col-md-12 col-lg-12 ">
             <div class="card shadow">
@@ -36,7 +39,7 @@
                      <td><div class="badge badge-success"><?php if($adm['status'] == 1) { echo "Aktif ";} ?></div></td>
                      <td>
                         <a href="#" class="btn btn-success btn-xs"><i class="fa fa-edit"></i></a>
-                        <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></a>
+                        <a href="<?= base_url('hapus_admin/') . $adm['id_admin']; ?>" class="btn btn-danger btn-xs"><i class="fa fa-trash" id="hapus" data-toggle="modal" data-target="#modal_hapus_admin" title="hapus"></i></a>
                      </td>
                   </tr>
                   <?php endforeach; ?>
@@ -66,5 +69,23 @@
    </section>
 </div>
             
+
+<div class="modal fade" id="modal_hapus_admin" tabindex="-1" role="dialog" aria-labelledby="largeModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+          <h4 class="modal-title mb-3">Data dihapus</h4>
+      </div>
+      <div class="modal-body">
+         <p>Apakah anda yakin ingin menghapus?</p>
+      </div>
+      <div class="modal-footer">
+         <button type="button" class="btn btn-primary">Hapus</button>
+         <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+      </div>
+    </div>
+  </div>
+</div>
+
  
       

@@ -12,6 +12,11 @@ class Main_model extends CI_Model {
       }
    }
 
+   public function hapus_mahasiswa($id_user) {
+      $this->db->where('id_user', $id_user);
+      $this->db->delete('tbl_user');
+   }
+
    public function tambah_admin($data) {
       $query = $this->db->insert('tbl_admin', $data);
       if($query) {
@@ -24,6 +29,11 @@ class Main_model extends CI_Model {
    public function get_admin() {
       $query = $this->db->get('tbl_admin');
       return $query;
+   }
+
+   public function hapus_admin($id_admin) {
+      $this->db->where('id_admin', $id_admin);
+      $this->db->delete('tbl_admin');
    }
 
    public function get_mahasiswa() {
@@ -45,9 +55,9 @@ class Main_model extends CI_Model {
       }
    }
 
-   // public function count_admin() {
-   //    $query = $this->db->get('tbl_admin');
-   //    return $query->num_rows();
-   // }
+   public function hapus_matkul($id_matkul) {
+      $this->db->where('id_matkul', $id_matkul);
+      $this->db->delete('tbl_matkul');
+   }
 
 }
