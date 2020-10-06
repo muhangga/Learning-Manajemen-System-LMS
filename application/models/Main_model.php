@@ -21,4 +21,33 @@ class Main_model extends CI_Model {
       }
    }
 
+   public function get_admin() {
+      $query = $this->db->get('tbl_admin');
+      return $query;
+   }
+
+   public function get_mahasiswa() {
+      $query = $this->db->get('tbl_user');
+      return $query;
+   }
+
+   public function get_matkul() {
+      $query = $this->db->get('tbl_matkul');
+      return $query;
+   }
+
+   public function tambah_matkul($data) {
+      $query = $this->db->insert('tbl_matkul', $data);
+      if($query) {
+         return true;
+      } else {
+         return false;
+      }
+   }
+
+   // public function count_admin() {
+   //    $query = $this->db->get('tbl_admin');
+   //    return $query->num_rows();
+   // }
+
 }

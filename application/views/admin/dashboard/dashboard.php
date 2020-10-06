@@ -62,3 +62,6 @@
       </div>
    </div>
 </div>
+   <div class="alert alert-success" role="alert">
+      Selamat datang <?= $admin["nama"]; ?> sebagai Admin!
+   </div>

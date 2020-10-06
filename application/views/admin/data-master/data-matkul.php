@@ -8,32 +8,36 @@
          <div class="breadcrumb-item"><?= $title; ?></div>
       </div>
       </div>
+
+      <?= $this->session->flashdata('message'); ?>
+
       <div class="row ">
          <div class="col-12 col-md-12 col-lg-12 ">
             <div class="card shadow">
             <div class="card-header">
                <h4><?= $title; ?></h4>
+               <a data-toggle="modal" data-target="#modal_add_matkul" class="btn btn-primary ml-auto text-white">Tambah Matkul</a>
             </div>
             <div class="card-body p-0">
                <div class="table-responsive">
                   <table class="table table-striped table-md table-bordered table-striped text-center">
                   <tr>
                      <th>No</th>
-                     <th>Nama</th>
-                     <th>Dibuat pada</th>
+                     <th>Matkul</th>
+                     <th>Semester</th>
                      <th>Status</th>
                      <th>Aksi</th>
                   </tr>
 
                   <?php 
                   $no = 1;
-                     foreach($get_admin as $adm) : 
+                     foreach($get_matkul as $matkul) : 
                   ?>
                   <tr>
                      <td><?= $no++ ?></td>
-                     <td><?= $adm['nama']; ?></td>
-                     <td><?= date('d F Y', $adm['tanggal_dibuat']); ?></td>
-                     <td><div class="badge badge-success"><?php if($adm['status'] == 1) { echo "Aktif ";} ?></div></td>
+                     <td><?= $matkul['matkul'] ?></td>
+                     <td><?= $matkul['semester'] ?></td>
+                     <td><div class="badge badge-success"><?php if($matkul['status'] == 1) { echo "Aktif ";} ?></div></td>
                      <td>
                         <a href="#" class="btn btn-success btn-xs"><i class="fa fa-edit"></i></a>
                         <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></a>
@@ -67,4 +71,21 @@
 </div>
             
  
-      
+<div class="modal fade" id="modal_add_matkul" tabindex="-1" role="dialog" aria-labelledby="largeModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+          <h4 class="modal-title mb-3">Tambah Data Matakuliah</h4>
+      </div>
+      <form action="<?= base_url('save_matkul');?>" method="post" name="form" class="form-horizontal form-label-left">
+        <div class="modal-body">
+          <?php $this->load->view('admin/data-master/add_matkul');?>
+        </div>
+        <div class="modal-footer">
+            <button class="btn" data-dismiss="modal" aria-hidden="true">Tutup</button>
+            <button class="btn btn-primary">Simpan</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

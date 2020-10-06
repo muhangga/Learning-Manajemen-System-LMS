@@ -10,6 +10,8 @@ class Auth extends CI_Controller {
       $this->load->model('Main_model');
    }
 
+   // Halaman user
+
    public function index() {
       $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
       $this->form_validation->set_rules('password', 'Password', 'trim|required');
@@ -25,6 +27,7 @@ class Auth extends CI_Controller {
       }
    }
 
+
    public function auth_login_user() {
       $email    = $this->input->post('email');
       $password = $this->input->post('password');
@@ -39,11 +42,7 @@ class Auth extends CI_Controller {
                   'akses'  => $admin['akses']
                ];
                $this->session->set_userdata($data);
-               if ($admin['akses'] == 2) {
-                  redirect('');
-               } else {
-                  redirect('auth');
-               }
+               redirect('');
             } else {
                $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Password salah!</div>');
                redirect('auth');
@@ -62,6 +61,9 @@ class Auth extends CI_Controller {
       $this->form_validation->set_rules('npm', 'NPM', 'required|trim');
       $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email|is_unique[tbl_user.email]', [
          'is_unique' => 'Email ini sudah terdaftar!'
+      ]);
+      $this->form_validation->set_rules('npm', 'NPM', 'required|trim|is_unique[tbl_user.npm]', [
+         'is_unique' => 'NPM ini sudah terdaftar!'
       ]);
       $this->form_validation->set_rules('password1', 'Password', 'required|trim|min_length[3]|matches[password2]', [
          'matches' => 'Password tidak sama!',
@@ -96,8 +98,8 @@ class Auth extends CI_Controller {
             redirect('register');
          }
       }
-
    }
+
 
    // Halaman Admin
 
@@ -131,11 +133,7 @@ class Auth extends CI_Controller {
                   'akses'  => $admin['akses']
                ];
                $this->session->set_userdata($data);
-               if ($admin['akses'] == 1) {
-                  redirect('dashboard_administrator');
-               } else {
-                  redirect('login_admin');
-               }
+               redirect('dashboard_administrator');
             } else {
                $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Password salah!</div>');
                redirect('auth/login_admin');
@@ -184,6 +182,12 @@ class Auth extends CI_Controller {
          redirect('auth/login_admin');
       }
 
+   }
+   public function logout() {
+      $this->session->unset_userdata('email');
+      $this->session->unset_userdata('akses');
+      $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Anda telah Logout!</div>');
+      redirect('auth');
    }
 }
    

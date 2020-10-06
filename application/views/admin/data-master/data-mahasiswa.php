@@ -20,6 +20,7 @@
                   <tr>
                      <th>No</th>
                      <th>Nama</th>
+                     <th>NPM</th>
                      <th>Dibuat pada</th>
                      <th>Status</th>
                      <th>Aksi</th>
@@ -27,13 +28,14 @@
 
                   <?php 
                   $no = 1;
-                     foreach($get_admin as $adm) : 
+                     foreach($get_mahasiswa as $mahasiswa) : 
                   ?>
                   <tr>
                      <td><?= $no++ ?></td>
-                     <td><?= $adm['nama']; ?></td>
-                     <td><?= date('d F Y', $adm['tanggal_dibuat']); ?></td>
-                     <td><div class="badge badge-success"><?php if($adm['status'] == 1) { echo "Aktif ";} ?></div></td>
+                     <td><?= $mahasiswa['nama']; ?></td>
+                     <td><?= $mahasiswa['npm']; ?></td>
+                     <td><?= date('d F Y', $mahasiswa['tanggal_dibuat']); ?></td>
+                     <td><div class="badge badge-success"><?php if($mahasiswa['status'] == 1) { echo "Aktif ";} ?></div></td>
                      <td>
                         <a href="#" class="btn btn-success btn-xs"><i class="fa fa-edit"></i></a>
                         <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></a>
