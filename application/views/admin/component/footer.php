@@ -6,6 +6,15 @@
     </div>
   </div>
 
+<script>
+
+  $.('.custom-file-input').on('change', function () {
+     let fileName = $(this).val().split('\\').pop();
+     $(this).next('.custom-file-label').addClass("selected").html(fileName);
+  });
+
+</script>
+
 
 <!-- General JS Scripts -->
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>

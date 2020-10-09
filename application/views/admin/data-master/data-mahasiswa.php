@@ -38,10 +38,14 @@
                      <td><?= $mahasiswa['nama']; ?></td>
                      <td><?= $mahasiswa['npm']; ?></td>
                      <td><?= date('d F Y', $mahasiswa['tanggal_dibuat']); ?></td>
-                     <td><div class="badge badge-success"><?php if($mahasiswa['status'] == 1) { echo "Aktif ";} ?></div></td>
+                     <?php if($mahasiswa['status'] == 1) { 
+                        echo "<td><div class='badge badge-success'>Aktif</div></td>";
+                     } else {
+                        echo "<td><div class='badge badge-danger'>Tidak Aktif</div></td>";        
+                     } ?>
                      <td>
-                        <a href="#" class="btn btn-success btn-xs"><i class="fa fa-edit"></i></a>
-                        <a href="<?= base_url('hapus_mahasiswa/') . $mahasiswa['id_user']; ?>" class="btn btn-danger btn-xs"><i class="fa fa-trash" id="hapus" data-toggle="modal" data-target="#modal_hapus_mahasiswa" title="hapus"></i></a>
+                        <a href="<?= base_url('edit_mahasiswa/') . $mahasiswa['id_user']; ?>" class="btn btn-success btn-xs"><i class="fa fa-edit" id="ubah_mahasiswa" title="edit"></i></a>
+                        <a href="<?= base_url('hapus_mahasiswa/') . $mahasiswa['id_user']; ?>" class="btn btn-danger btn-xs"><i class="fa fa-trash" id="hapus" title="hapus"></i></a>
                      </td>
                   </tr>
                   <?php endforeach; ?>
@@ -70,6 +74,4 @@
       </div>
    </section>
 </div>
-            
- 
-      
+   

@@ -68,6 +68,9 @@ $route['hapus_mahasiswa/(:num)'] = 'Main/hapus_mahasiswa/$1';
 $route['data_matkul'] = 'Main/data_matkul'; 
 $route['save_matkul'] = 'Main/save_matkul'; 
 $route['hapus_matkul/(:num)'] = 'Main/hapus_matkul/$1'; 
+$route['edit_admin/(:num)'] = 'Main/edit_admin/$1'; 
+$route['edit_mahasiswa/(:num)'] = 'Main/edit_mahasiswa/$1'; 
+$route['edit_matkul/(:num)'] = 'Main/edit_matkul/$1'; 
 
 $route['default_controller'] = 'Auth';
 $route['404_override'] = '';

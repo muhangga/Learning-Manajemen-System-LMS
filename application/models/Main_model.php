@@ -60,4 +60,18 @@ class Main_model extends CI_Model {
       $this->db->delete('tbl_matkul');
    }
 
+   public function edit_admin($id_admin) {
+      $this->db->where('id_admin', $id_admin);
+      $query = $this->db->update('tbl_admin');
+      if($query) {
+         return true;
+      } else {
+         return false;
+      }
+   }
+
+   public function edit_mahasiswa($id_user) {
+      $query = $this->db->query("SELECT * FROM tbl_user WHERE id_user = $id_user");
+      return $query;
+   }
 }
