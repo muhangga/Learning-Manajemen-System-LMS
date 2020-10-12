@@ -44,7 +44,7 @@
                 </li>
              <li class="menu-header">Change Profile</li>
                 <li class="nav-item">
-                  <a href="<?= base_url('dashboard') ?>" class="nav-link"><i class="fas fa-users"></i><span>Change Profile</span></a>
+                  <a href="<?= base_url('User/edit_user/') . $user['id_user'] ?>" class="nav-link"><i class="fas fa-users"></i><span>Change Profile</span></a>
                 </li>
               <li class="menu-header">Matakuliah</li>
                 <li class="nav-item">

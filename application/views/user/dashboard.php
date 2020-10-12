@@ -63,7 +63,7 @@
                                  </td>
                               </tr>
                            </table>
-                           <a href="#" class="btn btn-primary mt-4">Ubah Profile</a>
+                           <a href="<?= base_url('User/edit_user/') . $user['id_user'] ?>" class="btn btn-primary mt-4">Ubah Profile</a>
                         </div>
                      </div>
                    </div>

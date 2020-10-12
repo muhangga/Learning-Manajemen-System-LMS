@@ -31,6 +31,11 @@ class Main_model extends CI_Model {
       return $query;
    }
 
+   public function get_user() {
+      $query = $this->db->get('tbl_user');
+      return $query;
+   }
+
    public function hapus_admin($id_admin) {
       $this->db->where('id_admin', $id_admin);
       $this->db->delete('tbl_admin');

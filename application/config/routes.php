@@ -56,6 +56,7 @@ $route['register'] = 'Auth/register';
 
 // User
 $route['dashboard'] = 'User'; 
+$route['edit_user'] = 'User/edit_user'; 
 
 
 

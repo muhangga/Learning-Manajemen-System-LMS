@@ -1,6 +1,6 @@
 <footer class="footer">
         <div class="text-center">
-          Copyright &copy; <?= date('Y'); ?> <div class="bullet"></div> Design By Kelompok 11</a>
+          Copyright &copy; <?= date('Y'); ?> <div class="bullet"></div> Design By Kelompok 10</a>
         </div>
       </footer>
     </div>
