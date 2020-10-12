@@ -41,6 +41,9 @@
                 <li class="nav-item">
                   <a href="<?= base_url('dashboard_administrator') ?>" class="nav-link"><i class="fas fa-home"></i><span>Dashboard</span></a>
                 </li>
+                <li class="nav-item">
+                  <a href="<?= base_url('Main/edit_admin/') . $admin['id_admin'] ?>" class="nav-link"><i class="fas fa-users"></i><span>Change Profile</span></a>
+                </li>
               <li class="menu-header">Data master</li>
               <li class="nav-item dropdown">
                 <a href="#" class="nav-link has-dropdown"><i class="fas fa-fw fa-edit"></i><span>Data Master</span></a>

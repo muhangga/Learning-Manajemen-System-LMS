@@ -32,17 +32,17 @@ class Auth extends CI_Controller {
       $email    = $this->input->post('email');
       $password = $this->input->post('password');
 
-      $user = $this->db->get_where('tbl_admin', ['email' => $email])->row_array();
+      $user = $this->db->get_where('tbl_user', ['email' => $email])->row_array();
 
       if ($user) {
          if ($user['status'] == 1) {
-            if (password_verify($password, $admin['password'])) {
+            if (password_verify($password, $user['password'])) {
                $data = [
-                  'email'  => $admin['email'],
-                  'akses'  => $admin['akses']
+                  'email'  => $user['email'],
+                  'akses'  => $user['akses']
                ];
                $this->session->set_userdata($data);
-               redirect('');
+               redirect('user');
             } else {
                $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Password salah!</div>');
                redirect('auth');
@@ -102,7 +102,6 @@ class Auth extends CI_Controller {
 
 
    // Halaman Admin
-
    public function login_admin() 
    {
       $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');

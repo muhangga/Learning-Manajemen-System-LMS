@@ -33,7 +33,7 @@ class Main extends CI_Controller {
       
       $this->load->view('admin/component/header', $data);
       $this->load->view('admin/component/sidebar', $data);
-      $this->load->view('admin/data-master/data-administrator', $data);
+      $this->load->view('admin/data-master/data-admin/data-administrator', $data);
       $this->load->view('admin/component/footer');
    }
 
@@ -44,13 +44,12 @@ class Main extends CI_Controller {
          "data_master" => "Data Master",
          "edit" => "Edit Administrator",
          "admin" => $this->db->get_where("tbl_admin", ['email' => $this->session->userdata('email')])->row_array(),
-         "get_admin" => $this->Main_model->get_admin()->result_array()
-         // "edit_admin" => $this->Main_model->edit_admin($id_admin)->result()
+         "get_admin" => $this->Main_model->get_admin($id_admin)->result()
       ];
       
       $this->load->view('admin/component/header', $data);
       $this->load->view('admin/component/sidebar', $data);
-      $this->load->view('admin/data-master/edit_admin', $data);
+      $this->load->view('admin/data-master/data-admin/edit_admin', $data);
       $this->load->view('admin/component/footer');
    }
 
@@ -114,7 +113,7 @@ class Main extends CI_Controller {
       
       $this->load->view('admin/component/header', $data);
       $this->load->view('admin/component/sidebar', $data);
-      $this->load->view('admin/data-master/data-mahasiswa', $data);
+      $this->load->view('admin/data-master/data-mahasiswa/data-mahasiswa', $data);
       $this->load->view('admin/component/footer');
    }
 
@@ -137,7 +136,7 @@ class Main extends CI_Controller {
       ];
       $this->load->view('admin/component/header', $data);
       $this->load->view('admin/component/sidebar', $data);
-      $this->load->view('admin/data-master/edit_mahasiswa', $data);
+      $this->load->view('admin/data-master/data-mahasiswa/edit_mahasiswa', $data);
       $this->load->view('admin/component/footer');
    }
 
@@ -178,7 +177,7 @@ class Main extends CI_Controller {
       
       $this->load->view('admin/component/header', $data);
       $this->load->view('admin/component/sidebar', $data);
-      $this->load->view('admin/data-master/data-matkul', $data);
+      $this->load->view('admin/data-master/data-matkul/data-matkul', $data);
       $this->load->view('admin/component/footer');
    }
 
@@ -227,7 +226,7 @@ class Main extends CI_Controller {
       ];
       $this->load->view('admin/component/header', $data);
       $this->load->view('admin/component/sidebar', $data);
-      $this->load->view('admin/data-master/edit_matkul', $data);
+      $this->load->view('admin/data-master/data-matkul/edit_matkul', $data);
       $this->load->view('admin/component/footer');
    }
 

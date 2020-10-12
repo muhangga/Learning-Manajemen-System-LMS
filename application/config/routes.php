@@ -54,6 +54,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['login_user'] = 'Auth';
 $route['register'] = 'Auth/register';
 
+// User
+$route['dashboard'] = 'User'; 
+
+
 
 // Admin
 $route['login_admin'] = 'Auth/login_admin'; 

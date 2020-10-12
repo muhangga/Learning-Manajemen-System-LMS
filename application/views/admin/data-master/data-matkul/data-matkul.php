@@ -89,7 +89,7 @@
       </div>
       <form action="<?= base_url('save_matkul');?>" method="post" name="form" class="form-horizontal form-label-left">
         <div class="modal-body">
-          <?php $this->load->view('admin/data-master/add_matkul');?>
+          <?php $this->load->view('admin/data-master/data-matkul/add_matkul');?>
         </div>
         <div class="modal-footer">
             <button class="btn" data-dismiss="modal" aria-hidden="true">Tutup</button>
