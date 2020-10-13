@@ -79,4 +79,14 @@ class Main_model extends CI_Model {
       $query = $this->db->query("SELECT * FROM tbl_user WHERE id_user = $id_user");
       return $query;
    }
+
+   public function update_mhs($email, $data) {
+      $this->db->where('email', $email);
+      $query = $this->db->update('tbl_user', $data);
+      if($query){
+          return true;
+      }else{
+          return false;
+      }
+   }
 }

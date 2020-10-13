@@ -1,10 +1,10 @@
 <div class="main-content">
    <section class="section">
       <div class="section-header">
-      <h1 style="font-size:18px;"><?= $title; ?></h1>
+      <h1 style="font-size:18px;"><?= $edit; ?></h1>
       <div class="section-header-breadcrumb">
-         <div class="breadcrumb-item active"><a href="#"><?= $title; ?></a></div>
-         <div class="breadcrumb-item"><?= $edit; ?></div>
+         <div class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>"><?= $title; ?></a></div>
+         <div class="breadcrumb-item active"><?= $edit; ?></div>
       </div>
       </div>
 
@@ -33,6 +33,13 @@
                         <div class="col-sm-10">
                            <input type="text" class="form-control" id="nama" name="nama" value="<?= $user['nama']; ?>">
                            <?= form_error('nama', '<small class="text-danger pl-3">', '</small>'); ?>
+                        </div>
+                     </div>
+                     <div class="form-group row">
+                        <label for="npm" class="col-sm-2 col-form-label">NPM</label>
+                        <div class="col-sm-10">
+                           <input type="text" class="form-control" id="npm" name="npm" value="<?= $user['npm']; ?>" readonly>
+                           <?= form_error('npm', '<small class="text-danger pl-3">', '</small>'); ?>
                         </div>
                      </div>
                      <div class="form-group row">

@@ -3,7 +3,7 @@
       <div class="section-header">
       <h1 style="font-size:18px;"><?= $title; ?></h1>
       <div class="section-header-breadcrumb">
-         <div class="breadcrumb-item active"><a href="#"><?= $title; ?></a></div>
+         <div class="breadcrumb-item active"><a href="<?= base_url('dashboard') ?>"><?= $title; ?></a></div>
       </div>
       </div>
 
@@ -12,15 +12,21 @@
       <section class="section-body">
           <!-- <h2 class="section-title">Dashboard User</h2> -->
 
-          <marquee behavior="scroll" srcollamount="2" class="alert alert-info mb-4">Halo Selamat Datang <?= $user['nama'] ?> di Learning Manajemen System!</marquee>
+          <marquee behavior="scroll" srcollamount="2" class="alert alert-info mb-4">Halo Selamat Datang <?= $user['nama'] ?> di Learning Manajemen System! Stay Healthy Everyone! <i class="fas fa-smile"></i></marquee>
 
           <div class="row">
-             <div class="col-md-5 col-lg-5 col-sm-12 col-xs-12">
+             <div class="col-md-5 col-lg-5 col-sm-12 col-xs-12" style="margin-bottom:18vh;">
                 <div class="card card-success">
                    <div class="card-head">
                       <h4 style="font-size:15px;"><span class="fas fa-volume-up rotate-90 pl-4 pt-4 mr-3"></span>Pengumuman</h4>
                       <hr>
-                      <p class="pl-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio delectus, officiis modi id dolorem aut illo dolorum quisquam? Optio praesentium vitae eligendi ab, voluptatum quam illum similique nobis tempora obcaecati?</p>
+                      <p class="pl-4">
+                      Untuk Mahasiswa baru silahkan ambil Mata kuliah sesuai dengan semester kalian, dan jangan lupa untuk tetap menjaga kesehatan selama pandemi ini. 
+                      Perkuliahan akan dilaksanakan secara daring.. <br><br>
+                      #StayHealthy <br>
+                      #StaySafe <br>
+                      #UseMasker
+                      </p>
                    </div>
                 </div>
              </div>
@@ -42,6 +48,10 @@
                               <tr>
                                  <td width="30%">Nama</td>
                                  <td>: <?= $user['nama'] ?></td>
+                              </tr>
+                              <tr>
+                                 <td width="30%">NPM</td>
+                                 <td>: <?= $user['npm'] ?></td>
                               </tr>
                               <tr>
                                  <td width="30%">Email</td>
@@ -71,7 +81,6 @@
              </div>
           </div>
       </section>
-     
    </section>
 </div>
    

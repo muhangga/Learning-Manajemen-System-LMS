@@ -8,11 +8,12 @@
       <ul class="navbar-nav navbar-right ml-auto">
 
          <li class="dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
-         <img alt="image" src="<?= base_url('vendor/image/') . $user['gambar']; ?>" class="rounded-circle mr-3">
+         <img alt="image" src="<?= base_url('vendor/image/') . $user['gambar']; ?>" class="rounded-circle mr-1">
          <div class="d-sm-none d-lg-inline-block"><?= $user["nama"] ?></div></a>
          <div class="dropdown-menu dropdown-menu-right">
             <a href="<?= base_url('dashboard') ?>" class="dropdown-item has-icon">
-               <i class="far fa-user"></i> Profile
+               <i class="far fa-user"></i> 
+               Profile
             </a>
             <div class="dropdown-divider"></div>
             <a href="<?= base_url('logout') ?>" class="dropdown-item has-icon text-danger">

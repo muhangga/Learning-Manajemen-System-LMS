@@ -38,6 +38,9 @@ class User extends CI_Controller {
 
    public function update_user() {
       $this->form_validation->set_rules('nama', 'Input Nama Lengkap', 'required');
+      $this->form_validation->set_rules('npm', 'NPM', 'required|trim|is_unique[tbl_user.npm]', [
+         'is_unique' => 'NPM ini sudah terdaftar!'
+      ]);
 
       if ($this->form_validation->run() == FALSE) {
          $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Data gagal diedit!</div>');
@@ -45,6 +48,7 @@ class User extends CI_Controller {
       } else {
 
          $nama = $this->input->post('nama');
+         $npm = $this->input->post('npm');
          $email = $this->input->post('email');
 
          // cek jika ada gambar yang akan diupload
@@ -70,6 +74,7 @@ class User extends CI_Controller {
             }
 
             $this->db->set('nama', $nama);
+            $this->db->set('npm', $npm);
             $this->db->where('email', $email);
             $this->db->update('tbl_user');
 
