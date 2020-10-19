@@ -89,4 +89,13 @@ class Main_model extends CI_Model {
           return false;
       }
    }
+
+   public function ambil_matkul($data) {
+      $query = $this->db->insert('tbl_kelas_matkul', $data);
+      if($query) {
+         return true;
+      } else {
+         return false;
+      }
+   }
 }

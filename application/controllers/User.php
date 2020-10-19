@@ -83,5 +83,46 @@ class User extends CI_Controller {
       }
    } 
 
+   public function matkul($id_user) {
+      $data = [ 
+         "title" => "Matakuliah",
+         "matkul" => "Ambil Matakuliah",
+         "user" => $this->db->get_where("tbl_user", ['email' => $this->session->userdata('email')])->row_array(),
+         "get_matkul" => $this->Main_model->get_matkul($id_user)->result_array(),
+         "get_user" => $this->Main_model->get_user($id_user)->result()
+      ];
+      
+      $this->load->view('component/header', $data);
+      $this->load->view('component/sidebar', $data);
+      $this->load->view('user/matakuliah', $data);
+      $this->load->view('component/footer');
+   }
+
+   public function ambil_matkul() {
+   
+      if ($this->form_validation->run() == TRUE) {
+
+         $id_user = $this->input->post('id_user');
+         $matkul = $this->input->post('inputmatkul');
+
+         $data = [
+            'id_user'=> $id_user,
+            'matkul'  => $matkul,
+            'status'   => 1
+         ];
+
+        $success = $this->Main_model->ambil_matkul($data);
+        var_dump($success); die;
+      //   if ($success) {
+      //    $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Data berhasil ditambahkan</div>');
+      //    redirect('User/matkul');
+      //   }
+      // } else {
+      //    $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Data gagal ditambahkan, pastikan Matakuliah belum diambil!</div>');
+      //    redirect('dashboard');     
+      }
+   }
     
 }
+
+ 

@@ -15,7 +15,7 @@
           <marquee behavior="scroll" srcollamount="2" class="alert alert-info mb-4">Halo Selamat Datang <?= $user['nama'] ?> di Learning Manajemen System! Stay Healthy Everyone! <i class="fas fa-smile"></i></marquee>
 
           <div class="row">
-             <div class="col-md-5 col-lg-5 col-sm-12 col-xs-12" style="margin-bottom:18vh;">
+             <div class="col-md-5 col-lg-5 col-sm-12 col-xs-12 pr-4" style="margin-bottom:18vh;">
                 <div class="card card-success">
                    <div class="card-head">
                       <h4 style="font-size:15px;"><span class="fas fa-volume-up rotate-90 pl-4 pt-4 mr-3"></span>Pengumuman</h4>
@@ -47,23 +47,23 @@
                            <table width="100%" class="mt-3">
                               <tr>
                                  <td width="30%">Nama</td>
-                                 <td>: <?= $user['nama'] ?></td>
+                                 <td>: &nbsp <?= $user['nama'] ?></td>
                               </tr>
                               <tr>
-                                 <td width="30%">NPM</td>
-                                 <td>: <?= $user['npm'] ?></td>
+                                 <td width="30%">NPM </td>
+                                 <td>: &nbsp <?= $user['npm'] ?></td>
                               </tr>
                               <tr>
                                  <td width="30%">Email</td>
-                                 <td>: <?= $user['email'] ?></td>
+                                 <td>: &nbsp <?= $user['email'] ?></td>
                               </tr>
                               <tr>
                                  <td width="30%">Dibuat Tanggal</td>
-                                 <td>: <?= date('d F Y', $user['tanggal_dibuat']); ?></td>
+                                 <td>: &nbsp <?= date('d F Y', $user['tanggal_dibuat']); ?></td>
                               </tr>
                               <tr>
-                                 <td width="30%">Status</td>
-                                 <td>:
+                                 <td width="30%" class="pb-3 border-bottom">Status</td>
+                                 <td class="pb-3 border-bottom">: &nbsp 
                                     <?php if ($user['status'] == 1) { ?>
                                        <div class="badge badge-success">Aktif</div>
                                     <?php } 
@@ -72,6 +72,18 @@
                                     <?php } ?>
                                  </td>
                               </tr>
+                              <tr>
+                                 <td width="40%" class="pt-3">Mata kuliah yang diambil</td>
+                                 <td witdh="40%" class="pt-3">: Elektronika B</td>
+                              </tr>
+                              <tr>
+                                 <td width="40%"></td>
+                                 <td>: Sistem Mikroprosessor C</td>
+                              </tr>
+                               <tr>
+                                 <td width="40%"></td>
+                                 <td>: Analisis Perancangan Sistem G</td>
+                              </tr>
                            </table>
                            <a href="<?= base_url('User/edit_user/') . $user['id_user'] ?>" class="btn btn-primary mt-4">Ubah Profile</a>
                         </div>
@@ -79,6 +91,21 @@
                    </div>
                 </div>
              </div>
+
+            <!-- <div class="row">
+               <div class="col-md-12 col-xs-12 col-lg-12 col-sm-12 pl-4">
+                  <div class="card card-success">
+                     <div class="card-head">
+                        <h4 style="font-size:15px;"><span class="fas fa-book rotate-90 pl-4 pt-4 mr-3"></span>Matakuliah yang diambil</h4>
+                        <hr>
+                        <li>
+                                       <ul>Elektronika B</ul>
+                        </li>
+                     </div>
+                  </div>
+               </div>
+            </div> -->
+
           </div>
       </section>
    </section>

@@ -49,7 +49,7 @@
                 </li>
               <li class="menu-header">Matakuliah</li>
                 <li class="nav-item">
-                  <a href="<?= base_url('dashboard') ?>" class="nav-link"><i class="fas fa-edit"></i><span>Mata kuliah</span></a>
+                  <a href="<?= base_url('User/matkul/') . $user['id_user'] ?>" class="nav-link"><i class="fas fa-edit"></i><span>Mata kuliah</span></a>
                 </li>
           </ul>
         </aside>
