@@ -189,5 +189,12 @@ class Auth extends CI_Controller {
       $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Anda telah Logout!</div>');
       redirect('auth');
    }
+
+   public function logout_admin() {
+      $this->session->unset_userdata('email');
+      $this->session->unset_userdata('akses');
+      $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Anda telah Logout!</div>');
+      redirect('auth/login_admin');
+   }
 }
    

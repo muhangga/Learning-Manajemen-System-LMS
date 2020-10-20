@@ -40,7 +40,7 @@
                      <td><?= date('d F Y', $adm['tanggal_dibuat']); ?></td>
                      <td><div class="badge badge-success"><?php if($adm['status'] == 1) { echo "Aktif ";} ?></div></td>
                      <td>
-                        <a href="<?= base_url('edit_admin/') . $adm['id_admin'] ?>" class="btn btn-success btn-xs"><i class="fa fa-edit" id="edit" data-toggle="modal" data-target="#modal_edit_admin" title="edit"></i></a>
+                        <a href="<?= base_url('Main/edit_administrator/') . $adm['id_admin'] ?>" class="btn btn-success btn-xs"><i class="fa fa-edit" id="edit" data-toggle="modal" data-target="#modal_edit_admin" title="edit"></i></a>
                         <a href="<?= base_url('hapus_admin/') . $adm['id_admin']; ?>" class="btn btn-danger btn-xs"><i class="fa fa-trash" id="hapus" data-toggle="modal" data-target="#modal_hapus_admin" title="hapus"></i></a>
                      </td>
                   </tr>

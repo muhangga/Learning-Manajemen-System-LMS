@@ -72,18 +72,16 @@
                                     <?php } ?>
                                  </td>
                               </tr>
+                              <?php 
+                                 $matkul = $this->db->query("SELECT * FROM tbl_kelas_matkul")->result_array(); ?>
                               <tr>
-                                 <td width="40%" class="pt-3">Mata kuliah yang diambil</td>
-                                 <td witdh="40%" class="pt-3">: Elektronika B</td>
+                                 <td class="pt-3 pb-2 font-weight-bold">Mata kuliah yang diambil : </td>
+                                 <?php foreach($matkul as $mk) : ?>
                               </tr>
                               <tr>
-                                 <td width="40%"></td>
-                                 <td>: Sistem Mikroprosessor C</td>
+                                 <td width="40%"><?= $mk['matkul'] ?></td>
                               </tr>
-                               <tr>
-                                 <td width="40%"></td>
-                                 <td>: Analisis Perancangan Sistem G</td>
-                              </tr>
+                               <?php endforeach; ?>
                            </table>
                            <a href="<?= base_url('User/edit_user/') . $user['id_user'] ?>" class="btn btn-primary mt-4">Ubah Profile</a>
                         </div>

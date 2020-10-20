@@ -80,6 +80,11 @@ class Main_model extends CI_Model {
       return $query;
    }
 
+   public function edit_administrator($id_admin) {
+      $query = $this->db->query("SELECT * FROM tbl_admin WHERE id_admin = $id_admin");
+      return $query;
+   }
+
    public function update_mhs($email, $data) {
       $this->db->where('email', $email);
       $query = $this->db->update('tbl_user', $data);

@@ -99,27 +99,25 @@ class User extends CI_Controller {
    }
 
    public function ambil_matkul() {
-   
+      
+      $id_user = $this->input->post('id_user');
+      $matkul = $this->input->post('inputmatkul');
+
       if ($this->form_validation->run() == TRUE) {
-
-         $id_user = $this->input->post('id_user');
-         $matkul = $this->input->post('inputmatkul');
-
          $data = [
             'id_user'=> $id_user,
             'matkul'  => $matkul,
             'status'   => 1
          ];
+      $success = $this->db->insert('tbl_kelas_matkul', $data);
 
-        $success = $this->Main_model->ambil_matkul($data);
-        var_dump($success); die;
-      //   if ($success) {
-      //    $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Data berhasil ditambahkan</div>');
-      //    redirect('User/matkul');
-      //   }
-      // } else {
-      //    $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Data gagal ditambahkan, pastikan Matakuliah belum diambil!</div>');
-      //    redirect('dashboard');     
+        if ($success) {
+         $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Data berhasil ditambahkan</div>');
+         redirect('User/matkul');
+        }
+      } else {
+         $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Data gagal ditambahkan, pastikan Matakuliah belum diambil!</div>');
+         redirect('dashboard');     
       }
    }
     

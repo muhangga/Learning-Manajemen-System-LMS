@@ -34,7 +34,7 @@
                      <div class="form-group">
                         <label>Pilih matakuliah yang ingin diambil</label>
                         <select class="custom-select">
-                           <option selected disabled>==================== Pilih Matkul =======================</option>
+                           <option selected disabled name="inputmatkul">==================== Pilih Matkul =======================</option>
                            <?php foreach($get_matkul as $mk) : ?>
                               <option value="<?= $mk['matkul'] ?>" name="inputmatkul"><?= $mk['matkul'] ?></option>
                            <?php endforeach; ?>

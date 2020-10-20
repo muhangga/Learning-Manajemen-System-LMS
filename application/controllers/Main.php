@@ -53,6 +53,22 @@ class Main extends CI_Controller {
       $this->load->view('admin/component/footer');
    }
 
+   public function edit_administrator($id_admin) {
+      $data = [ 
+         "dashboard" => "Dashboard",
+         "title" => "Data Administrator",
+         "data_master" => "Data Master",
+         "edit" => "Edit Administrator",
+         "admin" => $this->db->get_where("tbl_admin", ['email' => $this->session->userdata('email')])->row_array(),
+         "adm" => $this->Main_model->edit_administrator($id_admin)->row_array()
+      ];
+      
+      $this->load->view('admin/component/header', $data);
+      $this->load->view('admin/component/sidebar', $data);
+      $this->load->view('admin/ganti-password', $data);
+      $this->load->view('admin/component/footer');
+   }
+
    public function update_admin() {
       $this->form_validation->set_rules('nama', 'Input Nama Lengkap', 'required');
 
