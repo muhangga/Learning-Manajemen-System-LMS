@@ -48,31 +48,13 @@
                   <a href="<?= base_url('User/edit_user/') . $user['id_user'] ?>" class="nav-link"><i class="fas fa-users"></i><span>Change Profile</span></a>
                 </li>
               <li class="menu-header">Matakuliah</li>
-                <li class="nav-item">
-                  <a href="<?= base_url('User/matkul/') . $user['id_user'] ?>" class="nav-link"><i class="fas fa-edit"></i><span>Mata kuliah</span></a>
-                </li>
-          </ul>
+                 <li class="nav-item dropdown">
+                <a href="#" class="nav-link has-dropdown"><i class="fas fa-fw fa-edit"></i><span>Data Matakuliah</span></a>
+                <ul class="dropdown-menu" style="padding-left: 0 !important" >
+                  <li><a class="nav-link p-4" href="<?= base_url('User/matkul/') . $user['id_user'] ?>"><i class="fas fa-list-ul"></i>Ambil Matakuliah</a></li>
+                  <li><a class="nav-link p-4" href="<?= base_url('User/delete_matkul/') . $user['id_user'] ?>"><i class="fas fa-calendar-times"></i>Hapus Matakuliah</a></li>
+                </ul>
+              </li>
+           </ul>
         </aside>
       </div>
-
-      <!-- Main Content -->
-    <!-- <div class="main-content">
-        <section class="section">
-          <div class="section-header">
-            <h1>Blank Page</h1>
-          </div>
-
-         <div class="section-body"></div> 
-       </section>
-      </div>  -->
-      <!-- <div class="main-content">
-        <section class="section">
-          <div class="section-header">
-            <h1>Table</h1>
-            <div class="section-header-breadcrumb">
-              <div class="breadcrumb-item active"><a href="#">Dashboard</a></div>
-              <div class="breadcrumb-item"><a href="#">Components</a></div>
-              <div class="breadcrumb-item">Table</div>
-            </div>
-          </div>
-      </div> -->

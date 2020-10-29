@@ -103,4 +103,14 @@ class Main_model extends CI_Model {
          return false;
       }
    }
+
+   public function matkul_user($id_user) {
+      $query = $this->db->query("SELECT * FROM tbl_kelas_matkul WHERE id_user = $id_user");
+      return $query;
+   }
+
+   public function delete_matkul($matkul){
+      $this->db->where('matkul', $matkul);
+      $this->db->delete('tbl_kelas_matkul');
+   }
 }

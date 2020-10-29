@@ -73,9 +73,16 @@
                                  </td>
                               </tr>
                               <?php 
-                                 $matkul = $this->db->query("SELECT * FROM tbl_kelas_matkul")->result_array(); ?>
+                                 $id_user = $this->session->userdata('id_user');
+                                 $matkul = $this->db->query("SELECT * FROM tbl_kelas_matkul WHERE id_user = $id_user")->result_array(); 
+
+                                 foreach($matkul as $m) :
+                                    $m = $m["matkul"];
+                                 endforeach;
+                              ?>     
                               <tr>
                                  <td class="pt-3 pb-2 font-weight-bold">Mata kuliah yang diambil : </td>
+                                 <td width="60%" class="pt-3 pb-2"><?php if(empty($m)) { echo' <div class="badge badge-danger">Tidak ada matakuliah yang diambil</div>'; } ?></td>
                                  <?php foreach($matkul as $mk) : ?>
                               </tr>
                               <tr>
@@ -89,21 +96,6 @@
                    </div>
                 </div>
              </div>
-
-            <!-- <div class="row">
-               <div class="col-md-12 col-xs-12 col-lg-12 col-sm-12 pl-4">
-                  <div class="card card-success">
-                     <div class="card-head">
-                        <h4 style="font-size:15px;"><span class="fas fa-book rotate-90 pl-4 pt-4 mr-3"></span>Matakuliah yang diambil</h4>
-                        <hr>
-                        <li>
-                                       <ul>Elektronika B</ul>
-                        </li>
-                     </div>
-                  </div>
-               </div>
-            </div> -->
-
           </div>
       </section>
    </section>

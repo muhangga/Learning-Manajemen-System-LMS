@@ -50,6 +50,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 
+// Akses di block
+$route['blocked'] = 'Main/blocked'; 
+
 // Login user
 $route['login_user'] = 'Auth';
 $route['register'] = 'Auth/register';
@@ -58,15 +61,14 @@ $route['register'] = 'Auth/register';
 $route['dashboard'] = 'User'; 
 $route['edit_user'] = 'User/edit_user'; 
 $route['matakuliah/(:num)'] = 'User/matkul/$1'; 
-// $route['ambil_matkul/(:num)'] = 'User/ambil_matkul/$1'; 
-
-
+$route['delete_matkul/(:num)'] = 'User/delete_matkul/$1'; 
 
 // Admin
 $route['login_admin'] = 'Auth/login_admin'; 
 $route['register_admin'] = 'Auth/register_admin'; 
 $route['logout'] = 'Auth/logout'; 
-$route['logout'] = 'Auth/logout_admin'; 
+$route['logout_admin'] = 'Auth/logout_admin'; 
+
 
 // Data master
 $route['dashboard_administrator'] = 'Main/index'; 
@@ -83,5 +85,5 @@ $route['edit_mahasiswa/(:num)'] = 'Main/edit_mahasiswa/$1';
 $route['edit_matkul/(:num)'] = 'Main/edit_matkul/$1'; 
 
 $route['default_controller'] = 'Auth';
-$route['404_override'] = '';
+$route['404_override'] = '404_notfound';
 $route['translate_uri_dashes'] = FALSE;

@@ -21,25 +21,30 @@
               <div class="row">
                <div class="col-lg-6">
 
-                  <form action="<?= base_url('User/ambil_matkul') ?>" method="POST">
-
-                  <input type="hidden" name="id_user" id="id_user" value="<?= $user['id_user']; ?>">
+                  <form action="<?= base_url('User/hapus_matkul') ?>" method="POST">
 
                      <div class="form-group">
                         <label for="nama" class=" col-form-label">Nama Lengkap</label>
                            <input type="text" class="form-control" id="nama" name="nama" value="<?= $user['nama']; ?>" readonly>
                            <?= form_error('nama', '<small class="text-danger pl-3">', '</small>'); ?>
                      </div>
-                     
-                     <div class="form-group">
-                        <label>Pilih matakuliah yang ingin diambil</label>
-                        <select class="custom-select" name="matkul">
-                           <option name="matkul" id="matkul" selected disabled>==================== Pilih Matkul =======================</option>
-                           <?php foreach($get_matkul as $mk) : ?>
-                              <option value="<?= $mk['matkul'] ?>" name="matkul" id="matkul"><?= $mk['matkul'] ?></option>
-                           <?php endforeach; ?>
-                           </select>
+
+                     <?php foreach($matkul_user as $m) :
+                        $matkul = $m['matkul'];
+                     endforeach; 
+
+                     if(empty($m)) : ?>
+                        <div class="form-group">
+                           <p>Tidak ada mata kuliah yang diambil, silahkan ambil terlebih dahulu!</p>
                         </div>
+                     <?php endif; ?>
+       
+                     <?php foreach($matkul_user as $mk) : ?>
+                        <div class="form-group">
+                           <input type="checkbox" name="matkul[]" id="matkul[]" value="<?= $mk['matkul'] ?>">
+                           <span class="ml-1"><?= $mk['matkul'] ?></span>
+                        </div>
+                     <?php endforeach; ?>
                      <button class="btn btn-primary">Simpan</button>
                  </div>
                </form>

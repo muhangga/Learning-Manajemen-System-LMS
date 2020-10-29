@@ -6,6 +6,12 @@ class Main extends CI_Controller {
    public function __construct() {
       parent::__construct();
       $this->load->model('Main_model');
+
+      $data['admin'] =  $this->db->get_where("tbl_admin", ['email' => $this->session->userdata('email')])->row_array();
+
+      // if (isset($admin['akses'] == 1)) {
+      //    redirect('dashboard');
+      // }
  
       if ($this->session->userdata('email') != TRUE) {
          redirect('auth/login_admin');
@@ -73,7 +79,7 @@ class Main extends CI_Controller {
       $this->form_validation->set_rules('nama', 'Input Nama Lengkap', 'required');
 
       if ($this->form_validation->run() == FALSE) {
-         $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Data gagal diedit!</div>');
+         $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert"><div class="alert alert-danger" role="alert"><div class="alert alert-success alert-dismissible fade show" role="alert">Data gagal diedit!<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
          redirect('administrator');  
       } else {
 
@@ -106,7 +112,7 @@ class Main extends CI_Controller {
             $this->db->where('email', $email);
             $this->db->update('tbl_admin');
 
-            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Profile anda telah di update!</div>');
+            $this->session->set_flashdata('message', '<div class="alert alert-success alert-dismissible fade show" role="alert">Data berhasil di update!<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
             redirect('administrator');
       }
    } 
@@ -114,7 +120,7 @@ class Main extends CI_Controller {
    public function hapus_admin($id_admin) {
       $this->Main_model->hapus_admin($id_admin);
 
-      $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Data Admin berhasil dihapus!</div>');
+      $this->session->set_flashdata('message', '<div class="alert alert-success alert-dismissible fade show" role="alert">Data Admin berhasil di hapus!<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');   
 		redirect('administrator');
    }
 
@@ -136,7 +142,7 @@ class Main extends CI_Controller {
     public function hapus_mahasiswa($id_user) {
       $this->Main_model->hapus_mahasiswa($id_user);
 
-      $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">User berhasil dihapus</div>');
+      $this->session->set_flashdata('message', '<div class="alert alert-success alert-dismissible fade show" role="alert">Data User berhasil di hapus!<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
 		redirect('data_mahasiswa');
    }
 
@@ -160,7 +166,7 @@ class Main extends CI_Controller {
        $this->form_validation->set_rules('nama', 'Input Nama Lengkap', 'required');
        
          if ($this->form_validation->run() == FALSE ) { 
-            $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Data Mahasiswa gagal diedit!</div>');
+            $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert"><div class="alert alert-success alert-dismissible fade show" role="alert">Data Mahasiswa gagal di Edit!<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
             redirect('data_mahasiswa');  
          } else {
             $nama = $this->input->post('nama');
@@ -177,7 +183,7 @@ class Main extends CI_Controller {
             $this->db->where('email', $email);
             $this->db->update('tbl_user', $data);
 
-            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Data mahasiswa berhasil di update!</div>');
+            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert"><div class="alert alert-success alert-dismissible fade show" role="alert">Data Mahasiswa berhasil di Update!<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>'); 
             redirect('data_mahasiswa');
        }
    }
@@ -214,11 +220,11 @@ class Main extends CI_Controller {
 
         $success = $this->Main_model->tambah_matkul($data);
         if ($success) {
-         $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Data berhasil ditambahkan</div>');
+         $this->session->set_flashdata('message', '<div class="alert alert-success alert-dismissible fade show" role="alert">Data Berhasil di tambahkan!<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>'); 
          redirect('data_matkul');
         }
       } else {
-         $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Data gagal ditambahkan, pastikan Matakuliah belum terdaftar!</div>');
+         $this->session->set_flashdata('message', '<div class="alert alert-danger alert-dismissible fade show" role="alert">Data gagal ditambahkan, pastikan Matakuliah belum diambil!<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
          redirect('data_matkul');     
       }
    }
@@ -226,7 +232,7 @@ class Main extends CI_Controller {
    public function hapus_matkul($id_matkul) {
       $this->Main_model->hapus_matkul($id_matkul);
 
-      $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Matakuliah berhasil dihapus</div>');
+      $this->session->set_flashdata('message', '<div class="alert alert-success alert-dismissible fade show" role="alert">Matakuliah berhasil dihapus!<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
 		redirect('data_matkul');
    }
 
@@ -252,7 +258,7 @@ class Main extends CI_Controller {
        $this->form_validation->set_rules('status', 'Input Status', 'required');
        
          if ($this->form_validation->run() == FALSE ) { 
-            $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Data Mahasiswa gagal diedit!</div>');
+            $this->session->set_flashdata('message', '<div class="alert alert-danger alert-dismissible fade show" role="alert">Data Matakuliah gagal di edit!<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
             redirect('data_matkul');  
          } else {
 
@@ -274,9 +280,13 @@ class Main extends CI_Controller {
             $this->db->where('id_matkul', $id_matkul);
             $this->db->update('tbl_matkul', $data);
 
-            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Data Mata kuliah berhasil di update!</div>');
+            $this->session->set_flashdata('message', '<div class="alert alert-success alert-dismissible fade show" role="alert">Matakuliah berhasil diupdate!<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
             redirect('data_matkul');
        }
+   }
+
+   public function blocked() {
+      $this->load->view('404_error');//loading view
    }
    
 }
