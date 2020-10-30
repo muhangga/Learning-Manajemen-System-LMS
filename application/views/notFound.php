@@ -26,7 +26,7 @@
 
 <html>
    <head>
-   <title>404 - NOT FOUND</title>
+   <title>404 Not Found!</title>
    </head>
       <body>
          <section>
