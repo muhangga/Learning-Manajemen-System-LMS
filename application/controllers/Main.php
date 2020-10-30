@@ -9,9 +9,9 @@ class Main extends CI_Controller {
 
       $data['admin'] =  $this->db->get_where("tbl_admin", ['email' => $this->session->userdata('email')])->row_array();
 
-      // if (isset($admin['akses'] == 1)) {
-      //    redirect('dashboard');
-      // }
+      if ($this->session->userdata('akses') != 1) {
+         redirect('user');
+      }
  
       if ($this->session->userdata('email') != TRUE) {
          redirect('auth/login_admin');

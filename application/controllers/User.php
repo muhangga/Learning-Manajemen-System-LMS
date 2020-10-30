@@ -7,6 +7,10 @@ class User extends CI_Controller {
       parent::__construct();
       $this->load->model('Main_model');
 
+      if ($this->session->userdata('akses') != 2) {
+         redirect('auth');
+      }
+
       if ($this->session->userdata('email') != TRUE) {
          redirect('auth/login_user');
       } 
