@@ -8,7 +8,7 @@ class User extends CI_Controller {
       $this->load->model('Main_model');
 
       if ($this->session->userdata('akses') != 2) {
-         redirect('auth');
+         redirect('dashboard_administrator');
       }
 
       if ($this->session->userdata('email') != TRUE) {

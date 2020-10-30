@@ -8,6 +8,9 @@ class Auth extends CI_Controller {
       parent::__construct();
       $this->load->library('form_validation');
       $this->load->model('Main_model');
+
+    
+
    }
 
    // Halaman user
@@ -129,6 +132,7 @@ class Auth extends CI_Controller {
          if ($admin['status'] == 1) {
             if (password_verify($password, $admin['password'])) {
                $data = [
+                  'id_admin'  => $admin['id_admin'],
                   'email'  => $admin['email'],
                   'akses'  => $admin['akses']
                ];
@@ -184,6 +188,7 @@ class Auth extends CI_Controller {
 
    }
    public function logout() {
+      $this->session->unset_userdata('id_user');
       $this->session->unset_userdata('email');
       $this->session->unset_userdata('akses');
       $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Anda telah Logout!</div>');
@@ -191,6 +196,7 @@ class Auth extends CI_Controller {
    }
 
    public function logout_admin() {
+      $this->session->unset_userdata('id_admin');
       $this->session->unset_userdata('email');
       $this->session->unset_userdata('akses');
       $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Anda telah Logout!</div>');

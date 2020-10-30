@@ -1,3 +1,16 @@
+<?php
+
+  $cek = $this->session->userdata('id_admin');
+  $user = $this->session->userdata('id_user');
+  if (isset($cek) == 1) {
+    redirect('dashboard_administrator');
+  }
+  if (isset($user) == 1) {
+    redirect('user');
+  }
+
+?>
+
 <style>
   html { background-color: white; }
 </style>

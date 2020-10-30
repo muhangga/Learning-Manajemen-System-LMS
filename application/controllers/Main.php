@@ -12,6 +12,10 @@ class Main extends CI_Controller {
       if ($this->session->userdata('akses') != 1) {
          redirect('user');
       }
+
+      if ($this->session->userdata('akses') == 1) {
+         $this->session->sess_expiration = 1800; 
+      }
  
       if ($this->session->userdata('email') != TRUE) {
          redirect('auth/login_admin');

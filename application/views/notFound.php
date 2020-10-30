@@ -5,7 +5,9 @@
       text-decoration: none;
       color: black;
       font-size: 14px;
-      margin-left: 600px;
+      /* margin-left: 600px; */
+      position: absolute;
+      left: 45%;
       border-radius: 20px;
       transition: 0.3s ease;
    }
@@ -16,7 +18,8 @@
       text-decoration: none;
       color: #FFF;
       font-size: 14px;
-      margin-left: 600px;
+      position: absolute;
+      left: 45%;
       border-radius: 20px;
    }
 </style>
@@ -31,7 +34,11 @@
                <div align="center" style="margin-top:50px; margin-bottom:50px;">
                   <img src="<?php echo base_url('vendor/image/404.png');?>" width="500px" /> 
                </div>
-               <a href="<?php echo base_url('Landingpage');?>">Return to Home</a>
+               <div class="row justify-content-center align-center ml-auto mr-auto">
+                  <div class="col">
+                     <a href="<?php echo base_url('Landingpage');?>">Return to Home</a>
+                  </div>
+               </div>
             </div>
          </section>
       </body>
