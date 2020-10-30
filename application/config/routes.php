@@ -69,7 +69,6 @@ $route['register_admin'] = 'Auth/register_admin';
 $route['logout'] = 'Auth/logout'; 
 $route['logout_admin'] = 'Auth/logout_admin'; 
 
-
 // Data master
 $route['dashboard_administrator'] = 'Main/index'; 
 $route['administrator'] = 'Main/data_administrator'; 
@@ -84,6 +83,6 @@ $route['edit_admistrator/(:num)'] = 'Main/edit_administrator/$1';
 $route['edit_mahasiswa/(:num)'] = 'Main/edit_mahasiswa/$1'; 
 $route['edit_matkul/(:num)'] = 'Main/edit_matkul/$1'; 
 
-$route['default_controller'] = 'Auth';
+$route['default_controller'] = 'Landingpage';
 $route['404_override'] = '404_notfound';
 $route['translate_uri_dashes'] = FALSE;

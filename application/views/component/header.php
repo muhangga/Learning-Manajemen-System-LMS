@@ -12,6 +12,7 @@
   <!-- CSS Libraries -->
 
   <!-- Template CSS -->
+  <link rel="stylesheet" href="<?php echo base_url('vendor/style.css'); ?>">
   <link rel="stylesheet" href="<?php echo base_url('vendor/assets/css/style.css'); ?>">
   <link rel="stylesheet" href="<?php echo base_url('vendor/assets/css/components.css'); ?>">
 </head>

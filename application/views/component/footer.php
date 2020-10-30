@@ -16,8 +16,10 @@
   <!-- JS Libraies -->
 
   <!-- Template JS File -->
-  <script src="<?= base_url('vendor/assets/js/scripts.js'); ?>"></script>
+  <script src="<?= base_url('vendor/scripts.js'); ?>"></script>
   <script src="<?= base_url('vendor/assets/js/custom.js'); ?>"></script>
+  <script src="<?= base_url('vendor/assets/js/jquery-1.11.1.min.js') ?>"></script>
+  <script src="<?= base_url('vendor/assets/js/jarallax.js') ?>"></script>
 
   <!-- Page Specific JS File -->
 </body>

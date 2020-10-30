@@ -117,6 +117,7 @@ class User extends CI_Controller {
    }
 
    public function delete_matkul($id_user) {
+      
       $data = [ 
          "title" => "Matakuliah",
          "matkul" => "Hapus Matakuliah",

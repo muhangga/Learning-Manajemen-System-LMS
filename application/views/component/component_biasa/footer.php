@@ -10,3 +10,17 @@
   <!-- Template JS File -->
   <script src="<?= base_url('vendor/assets/js/scripts.js'); ?>"></script>
   <script src="<?= base_url('vendor/assets/js/custom.js'); ?>"></script>
+  <script src="<?= base_url('vendor/assets/js/jquery-1.11.1.min.js') ?>"></script>
+
+  <script>
+jQuery(document).ready(function ($) {
+   $("a.nav-link.scroll , a.btn-started").click(function (event) {
+      event.preventDefault();
+      $("html,body").animate({
+            scrollTop: $(this.hash).offset().top - 50,
+         },
+         1200
+      );
+   });
+});
+  </script>

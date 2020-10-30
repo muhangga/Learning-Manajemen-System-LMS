@@ -25,13 +25,13 @@
    <div class="main-sidebar">
         <aside id="sidebar-wrapper">
           <div class="sidebar-brand pt-2">
-          <img src="<?= base_url('vendor/image/FMIPA.JPG') ?>" width="35px" class="pb-2">
+          <img src="<?= base_url('vendor/image/logo-unpak.png') ?>" width="35px" class="pb-2">
             <a href="<?= base_url('dashboard_administrator') ?>" class="ml-2">Simak Elearning</a>
           </div>
           <hr>
           <div class="sidebar-brand sidebar-brand-sm">
             <a href="<?= base_url('dashboard_administrator') ?>">
-              <img src="<?= base_url('vendor/image/FMIPA.JPG') ?>" width="35px">
+              <img src="<?= base_url('vendor/image/logo-unpak.png') ?>" width="35px">
             </a>
             <hr class="mt-1 mb-1">
           </div>

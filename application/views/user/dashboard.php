@@ -76,6 +76,7 @@
                                  $id_user = $this->session->userdata('id_user');
                                  $matkul = $this->db->query("SELECT * FROM tbl_kelas_matkul WHERE id_user = $id_user")->result_array(); 
 
+                                 $no = 1;
                                  foreach($matkul as $m) :
                                     $m = $m["matkul"];
                                  endforeach;
@@ -86,7 +87,7 @@
                                  <?php foreach($matkul as $mk) : ?>
                               </tr>
                               <tr>
-                                 <td width="40%"><?= $mk['matkul'] ?></td>
+                                 <td width="45%"><?= $no++. ". " . $mk['matkul'] ?></td>
                               </tr>
                                <?php endforeach; ?>
                            </table>
