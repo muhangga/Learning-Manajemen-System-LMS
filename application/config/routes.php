@@ -84,5 +84,5 @@ $route['edit_mahasiswa/(:num)'] = 'Main/edit_mahasiswa/$1';
 $route['edit_matkul/(:num)'] = 'Main/edit_matkul/$1'; 
 
 $route['default_controller'] = 'Landingpage';
-$route['404_override'] = '404_notfound';
+$route['404_override'] = 'NotFound';
 $route['translate_uri_dashes'] = FALSE;
